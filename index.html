@@ -32,7 +32,7 @@
         <!--  value="krishmicror1@gmail.com">                                         -->
         <!--  ----------------------------------------------------------------------  -->
     
-        Booking ID Text:<input id="00NgK000011RmNe" maxlength="10" name="00NgK000011RmNe" size="20" type="text" /><br>
+        <input id="00NgK000011RmNe" maxlength="10" name="00NgK000011RmNe" size="20" type="hidden" /><br>
     
         <label for="name">Contact Name</label><input id="name" maxlength="80" name="name" size="20" type="text" /><br>
     
@@ -49,4 +49,14 @@
     </form>
     
 </body>
+    <script>
+  // Get URL params
+  const urlParams = new URLSearchParams(window.location.search);
+  const bookingId = urlParams.get('booking_id');
+
+  // Set it in the hidden field
+  if (bookingId) {
+    document.getElementById('bookingField').value = bookingId;
+  }
+</script>
 </html>
